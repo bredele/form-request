@@ -16,7 +16,7 @@ module.exports = function(form, cb) {
     var request = new XMLHttpRequest
     request.addEventListener('load', cb)
     request.addEventListener('error', cb)
-    request.open(form.method.toUpperCase(), form.action)
+    request.open(form.method, form.action)
     request.send(data)
     event.preventDefault()
   })
