@@ -18,6 +18,7 @@ module.exports = function(form, cb) {
     request.addEventListener('load', cb)
     request.addEventListener('error', cb)
     request.open(form.method, form.action)
+    request.setRequestHeader("Content-type", form.enctype);
     request.send(encode(data, type))
     event.preventDefault()
   })
@@ -36,7 +37,7 @@ function encode(data, type) {
   if(type === 'application/x-www-form-urlencoded') {
     var query = ''
     for(var entry of data.entries()) {
-      query += entry[0] + '=' + encoreURI(entry[1]) + '&'
+      query += entry[0] + '=' + encodeURI(entry[1]) + '&'
     }
     return query
   }
