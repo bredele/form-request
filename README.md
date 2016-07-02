@@ -9,10 +9,8 @@ by the form properties such as method, enctype, etc.
 
 ```js
 var form = require('form-request')
-var data = form(document.querySelector('form'))
-data.append('name', 'olivier')
+form(document.querySelector('form'))
 ```
-The method returns a [form data](https://developer.mozilla.org/en-US/docs/Web/API/FormData/Using_FormData_Objects) object.
 
 ## License
 

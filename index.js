@@ -11,9 +11,9 @@
  */
 
 module.exports = function(form, cb) {
-  var data = new FormData(form)
-  var type = form.enctype;
   form.addEventListener('submit', function(event) {
+    var data = new FormData(form)
+    var type = form.enctype;
     var request = new XMLHttpRequest
     request.addEventListener('load', cb)
     request.addEventListener('error', cb)
@@ -22,7 +22,6 @@ module.exports = function(form, cb) {
     request.send(encode(data, type))
     event.preventDefault()
   })
-  return data
 }
 
 /**
