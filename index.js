@@ -6,6 +6,7 @@
  *
  * @param {element} form
  * @param {Function} cb
+ * @return {FormData}
  * @api public
  */
 
